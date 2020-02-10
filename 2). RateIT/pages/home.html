@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../assets/mainPage.css">
+  <link rel="stylesheet" href="../assets/register.css">
+  <link rel="stylesheet" href="../assets/login.css">
+  <link rel="stylesheet" href="../assets/addMovie.css">
+  <link href="https://fonts.googleapis.com/css?family=Acme|Playfair+Display|Roboto+Condensed|Roboto+Slab|Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <title>RateIT</title>
+</head>
+
+<body>
+  <div class="container">
+    <img class="popcorn-image" src="../assets/pictures/popcorn.png" alt="">
+    <img class="soda-image" src="../assets/pictures/soda.png" alt="">
+    <div class="header-container">
+      <div class="authentification-media-container">
+        <div class="social-media">
+          <a href="https://www.facebook.com/imdb/" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com/imdb" target="_blank"><i class="fab fa-twitter-square"></i></a>
+          <a href="https://www.instagram.com/imdb/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://play.google.com/store/apps/details?id=com.imdb.mobile&hl=ro" target="_blank"><i class="fab fa-google-play"></i></a>
+          <a href="https://apps.apple.com/us/app/imdb-movies-tv/id342792525" target="_blank"><i class="fab fa-app-store-ios"></i></a>
+        </div>
+        <div class="authentification same-effect">
+          <button id="add-movie" style="display:none"><span>ADD MOVIE</span></button>
+          <button id=registerBtn onclick="document.getElementById('display-modal-register').style.display='block'" style="width:auto"><span>REGISTER</span></button>
+          <button id=loginBtn onclick="document.getElementById('display-modal-login').style.display='block'" style="width:auto"><span>LOGIN</span></button>
+          <button id=logoutBtn style="display:none;" style="width:auto"><span>LOGOUT</span></button>
+        </div>
+
+      </div>
+      <div class="menu">
+        <a href="home.html"><img src="../assets/pictures/logo.png" alt=""> </a>
+        <ul>
+          <li><a href="home.html">HOME</a></li>
+          <li><a href="news.html">NEWS</a></li>
+          <li><a href="creators.html">CREATORS</a></li>
+
+        </ul>
+        <div class="cover"></div>
+        <div class="search-container">
+          <input placeholder="Search..." id="search-bar" type="text">
+          <button id="search-button"></button>
+        </div>
+      </div>
+    </div>
+    <!-------BODY ----->
+    <div class="body">
+
+      <div class="movie-and-filter">
+        <!----FILTERS---->
+        <div class="filters">
+          <h2>Filters</h2>
+          <h4>Genre</h4>
+
+
+          <label class="container-checkbox">All
+            <input type="radio" name="genre" value="" checked="">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Action
+            <input type="radio" name="genre" value="Action">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Adventure
+            <input type="radio" name="genre" value="Adventure">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Crime
+            <input type="radio" name="genre" value="Crime">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Family
+            <input type="radio" name="genre" value="Family">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Mystery
+            <input type="radio" name="genre" value="Mystery">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Sci-Fi
+            <input type="radio" name="genre" value="Sci-Fi">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Short
+            <input type="radio" name="genre" value="Short">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Fantasy
+            <input type="radio" name="genre" value="Fantasy">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Thriller
+            <input type="radio" name="genre" value="Thriller">
+            <span class="checkmark"></span>
+          </label>
+
+
+          <img src="../assets/pictures/filter-movie.png" alt="">
+        </div>
+        <!-----CONTENT---->
+
+        <div id="template">
+          <div class="title-poster">
+            <a target="_blank">
+              <img class="poster-element" alt="IMG MOVIE HERE">
+            </a>
+            <div class="middle">
+              <h3 class="title-element"></h3>
+            </div>
+            <div class="delete-movie">
+              <button class="delete"></button>
+              <i class="far fa-times-circle"></i>
+            </div>
+          </div>
+
+        </div>
+        <div id="list-movies">
+          <h2 id="no-search-results"></h2>
+          <div class="items loading">
+          </div>
+          <!---PAGES--->
+          <div class="pages"></div>
+        </div>
+      </div>
+
+      <!-- REGISTER -->
+      <div id="display-modal-register" class="modal-register">
+        <form class="user-register animate">
+
+          <div class="image">
+            <img src="../assets/pictures/logo.png" alt="logo" id="logoImg">
+          </div>
+
+          <div class="container-register">
+            <label for="username" id="user">Username</label>
+            <input type="text" id="username-register" placeholder="Enter Username" name="username" required>
+
+            <label for="password" id="pass">Password</label>
+            <input type="password" id="password-register" placeholder="Enter Password" name="password" required>
+
+            <label for="password" id="rpass">Repeat Password</label>
+            <input type="password" id="password-register2" placeholder="Enter Password" name="password" required>
+
+            <button type="submit" class="registerBtn">Register</button>
+
+            <p id="status"></p>
+            <span>Already have an account? <a href="login.html">Sign in!</a></span>
+
+            <div class="cancel-register">
+              <button type="button" class="cancel-reg-btn">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- LOGIN -->
+
+
+      <div id="display-modal-login" class="modal-login">
+        <form class="user-login animate">
+          <div class="image">
+            <img src="../assets/pictures/logo.png" alt="logo" id="logoImg">
+          </div>
+
+          <div>
+            <div class="container-login">
+              <label for="username" id="user">Username</label>
+              <input type="text" id="userName-login" placeholder="Enter Username" name="username" required>
+
+              <label for="password" id="pass">Password</label>
+              <input type="password" id="passWord-login" placeholder="Enter Password" name="password" required>
+
+              <button type="submit" class="submit-btn">Login</button> <br>
+              <label id="checkbox">
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+          </div>
+
+          <p id="confirm"></p>
+
+          <div class="cancel-login">
+            <button type="button" class="cancel-login-btn">Cancel</button>
+            <span>Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+      </div>
+
+
+      <!-- Add Movie -->
+        <div class="add-movie-modal">
+
+            <form class="add-new-movie animate">
+                <div class="image">
+                    <img src="../assets/pictures/logo.png" alt="logo" id="logoImg">
+                </div>
+
+                <div class="container-add-movie">
+
+                    <label for="">Image URL</label>
+                    <input type="text" placeholder="add image url" id="moviePoster">
+
+                    <label for="movieTitle">Title</label>
+                    <input type="text" id="movieTitle" placeholder="Enter Title" name="movieTitle" required>
+
+                    <label for="movieYear">Year</label>
+                    <input type="number" id="movieYear" placeholder="Enter Year" name="movieYear" required>
+
+                    <label for="movieDate">Release Date</label>
+                    <input type="date" id="movieDate" value="2019-01-01" min="1900-01-01" max="2022-12-31">
+
+                    <label for="movieRuntime">Runtime</label>
+                    <input type="number" value="" id="movieRuntime" placeholder="Runtime" name="movieRuntime" required>
+
+                    <label for="movieRating">Rating</label>
+                    <input type="number" value="" id="movieRating" placeholder="Rating" name="movieRating" required>
+
+                    <label for="movieVotes">Votes</label>
+                    <input type="number" value="" id="movieVotes" placeholder="Votes" name="movieVotes" required>
+
+                    <label for="movieDirector">Director</label>
+                    <input type="text" id="movieDirector" placeholder="Director" name="movieDirector" required>
+
+                    <label for="movieWriter">Writer</label>
+                    <input type="text" id="movieWriter" placeholder="Writer" name="movieWriter" required>
+
+                    <label for="movieAwards">Awards</label>
+                    <input type="text"  id="movieAwards" placeholder="Awards" name="movieAwards" required>
+
+                    <label for="movieActors">Actors</label>
+                    <input type="text"  id="movieActors" placeholder="Actors" name="movieActors" required>
+
+                    <label for="movieType" class="movieType">Type</label> <br>
+                    <div class="radio-btn">
+                      <input type="radio" name="movieType" value="Movie"> Movie<br>
+                      <input type="radio" name="movieType" value="Series"> Series<br>
+                      <input type="radio" name="movieType" value="Special"> Special<br>
+                      <input type="radio" name="movieType" value="Documentary"> Documentary<br>
+                    </div>
+
+                    <label for="movieCountry">Country</label>
+                    <input type="text" id="movieCountry" placeholder="Country" name="movieCountry" required>
+
+                    <label for="movieLanguage">Language</label>
+                    <input type="text" id="movieLanguage" placeholder="Language" name="movieLanguage" required>
+
+                    <label for="movieGenre" >Genre</label>
+                    <select name="movieGenreSelect" id="movieGenre">
+                                        <option value="Action">Action</option>
+                                        <option value="Adventure">Adventure</option>
+                                        <option value="Crime">Crime</option>
+                                        <option value="Family">Family</option>
+                                        <option value="Mistery">Mistery</option>
+                                        <option value="Short">Short</option>
+                                        <option value="Sci-Fi">Sci-Fi</option>
+                                        <option value="Fantasy">Fantasy</option>
+                                        <option value="Thriller">Thriller</option>
+                    </select> <br> <br>
+
+                    <label for="movieRated">Rated</label>
+                    <input type="text" id="movieRated" placeholder="Rated" name="movieRated" required>
+
+                    <label for="movieDescription">Description</label>
+                    <input type="text" id="movieDescription" placeholder="Description" name="movieDescription" required>
+                    <button class="submit-new-movie-btn">Submit</button>
+                    <button class="cancel-new-movie-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+  <script src="../views/helpers.js"></script>
+  <script src="../models/Movie.js"></script>
+  <script src="../models/Auth.js"></script>
+  <script src="../views/home.js"></script>
+  <script src="../views/register.js"></script>
+  <script src="../views/Login.js"></script>
+  <script src="../views/logout.js"></script>
+  <script src="../views/addMovie.js"></script>
+  <script src="../views/search.js"></script>
+  <script src="../views/filter.js"></script>
+</body>
+
+</html>

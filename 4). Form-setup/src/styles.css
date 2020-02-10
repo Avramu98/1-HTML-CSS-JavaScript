@@ -1,0 +1,357 @@
+body {
+  margin: 0;
+  background: linear-gradient(to left, white, gray);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*    Wrapper + FORM     */
+.page-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.wrapper {
+  top: 200px;
+  margin-left: 200px;
+  width: 900px;
+  height: 450px;
+  border: 2px solid black;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  background: linear-gradient(to right, #38A160, #40B7AD);
+  box-shadow: 0px 1px 14px 1px;
+}
+
+form {
+  width: 500px;
+  height: 450px;
+  position: absolute;
+  margin-top: 5px;
+}
+
+/*    INPUTS FIRST SECOND NAME    */
+.inputs>input[type="text"] {
+  display: block;
+  margin-left: 70px;
+  width: 350px;
+  margin-top: 5px;
+  height: 35px;
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: #40B7AD;
+  color: white;
+  padding-left: 10px;
+  box-shadow: 0px 2px 9px 0px black;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.inputs>input[type="text"]:focus {
+  background-color: #139FB2;
+}
+
+.inputs>input::placeholder {
+  color: white;
+  opacity: 0.8;
+  font-family: 'Lora', serif;
+}
+
+.inputs>label {
+  display: block;
+  margin-top: 10px;
+  font-size: 17px;
+  font-family: 'Lora', serif;
+  font-weight: bold;
+  margin-left: 70px;
+  color: white;
+}
+
+/*    RADIO BUTTONS     */
+.label-gender {
+  color: white;
+  font-size: 17px;
+  font-family: 'Lora', serif;
+  font-weight: bold;
+  margin-left: 70px;
+  margin-top: 20px;
+}
+
+.gender {
+  display: block;
+  position: relative;
+  margin-left: 100px;
+  cursor: pointer;
+  color: white;
+  font-size: 17px;
+  font-family: 'Lora', serif;
+  font-weight: bold;
+  width: 100px;
+}
+.gender > input {
+  opacity: 0;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.checkmark {
+  margin-top: 7px;
+  position: absolute;
+  top: 0;
+  left: -30px;
+  height: 20px;
+  width: 20px;
+  background-color:  #eee;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+.gender:hover .checkmark{
+  background-color: #ccc;
+}
+.gender > input:checked ~ .checkmark {
+  background-color: #139FB2;
+  transition: 1s;
+}
+.gender > input:checked ~ .checkmark:after {
+  content: "";
+  background-color: black;
+  position: absolute;
+  display: block;
+  left: 4px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+/*    SUBMIT BUTTON     */
+#submit-button {
+  margin-left: auto;
+  display: block;
+  margin-right: 80px;
+  margin-top: 10px;
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: #40B7AD;
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 2px 9px 0px black;
+}
+
+#submit-button:focus {
+  outline: none;
+  background-color: #38A160;
+  transition: 0.5s;
+}
+
+#submit-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/*    PICTURE     */
+.picture {
+  width: 400px;
+  height: 400px;
+  margin-right: 30px;
+}
+
+img {
+  margin-top: 20px;
+  height: 400px;
+  width: 400px;
+  border-radius: 100%;
+}
+
+/*    BANNERS     */
+#bannerGood {
+  position: absolute;
+  border: 2px solid black;
+  width: 900px;
+  top: 89px;
+  margin-left: 200px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #40B7AD, #139FB2);
+  opacity: 0;
+  box-shadow: 0px 1px 14px 1px;
+}
+
+#bannerGood>p {
+  margin-left: 30px;
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  color: white;
+}
+
+#bannerGood>p>strong {
+  font-family: 'Lora', serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+#bannerGood>p:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f058";
+  display: inline-block;
+  padding-right: 20px;
+  vertical-align: middle;
+  font-weight: normal;
+  color: white;
+  font-size: 35px;
+  padding-bottom: 5px;
+}
+
+#bannerBad {
+  position: absolute;
+  border: 2px solid black;
+  top: 90px;
+  width: 900px;
+  margin-left: 200px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #D60000, #FF6A6A);
+  opacity: 0;
+  box-shadow: 0px 1px 14px 1px;
+}
+
+#bannerBad>p {
+  margin-left: 30px;
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  color: white;
+}
+
+#bannerBad>p>strong {
+  font-family: 'Lora', serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+#bannerBad>p:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f057";
+  display: inline-block;
+  padding-right: 20px;
+  vertical-align: middle;
+  font-weight: normal;
+  color: white;
+  font-size: 35px;
+  padding-bottom: 5px;
+}
+
+#banner-btn {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  width: 45px;
+  height: 45px;
+  background: none;
+  outline: none;
+  border: none;
+  z-index: 1;
+}
+
+#banner-btn:hover {
+  cursor: pointer;
+}
+
+#banner-btn-bad {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  width: 45px;
+  height: 45px;
+  background: none;
+  outline: none;
+  border: none;
+  z-index: 1;
+}
+
+#banner-btn-bad:hover {
+  cursor: pointer;
+}
+
+.fa-times {
+  position: absolute;
+  top: 20px;
+  font-size: 35px;
+  padding-top: 3px;
+  right: 60px;
+  color: white;
+  z-index: 0;
+}
+
+/*    TEXTAREA     */
+textarea {
+  background-color: #40B7AD;
+  border-radius: 5px;
+  border: 2px solid black;
+  box-shadow: 0px 2px 9px 0px black;
+  margin-left: 70px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  padding-top: 5px;
+  color: white;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: white;
+  font-family: 'Lora', serif;
+  opacity: 0.8;
+}
+
+textarea:focus {
+  background-color: #139FB2;
+}
+/* COMMENTS */
+.comments {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 500px;
+  height: 700px;
+  background: linear-gradient(to bottom, #38A160, #40B7AD);
+  margin-left: 1200px;
+
+  margin-top: 200px;
+  box-shadow: 0px 1px 14px 1px;
+}
+
+#comments-list {
+  border-top: 2px solid black;
+
+  width: 495px;
+  height: 570px;
+  overflow-y: scroll;
+
+}
+#comment-col {
+box-shadow: 0px 2px 9px 0px black;
+width: 400px;
+margin: 0 auto;
+border-radius: 5px;
+background-color: white;
+
+}
+#comment-col > p {
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-style: italic;
+  font-family: 'Lora', serif;
+}
+#comment-col > strong {
+  display: block;
+  text-align: right;
+  padding-bottom: 10px;
+  font-family: 'Lora', serif;
+  padding-right: 20px;
+}

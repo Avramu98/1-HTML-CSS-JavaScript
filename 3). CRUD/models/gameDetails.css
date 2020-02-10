@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  background-color: black;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  background-color: white;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+h1 {
+  text-align: center;
+  padding-top: 50px;
+  font-family: 'Orbitron', sans-serif;
+}
+img {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.header {
+  border-bottom: 20px solid black;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-left: 20px;
+}
+p {
+  margin-left: 20px;
+}
+span {
+  display: block;
+}
+label {
+  display: block;
+}

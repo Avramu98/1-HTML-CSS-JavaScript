@@ -1,0 +1,15 @@
+.content {
+  width: 1400px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  top: 120px;
+}
+.iframe {
+  border: 2px solid black;
+
+}
+
+.authentification {
+ margin-right: 40px;
+}
